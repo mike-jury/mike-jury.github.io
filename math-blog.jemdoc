@@ -1,0 +1,203 @@
+# jemdoc: menu{MENU}{index.html}
+
+== Why is Grothendieck's inequality true? 
+
+
+The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form:
+
+*Theorem 1.* (Grothendieck's Theorem (GT))
+There is a universal constant $K$ with the following property: let $a_{ij}$ be an $n\times n$ matrix and suppose that
+\[
+\sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|\leq 1.
+\]
+Then
+\[
+\sup_{\|x_i\|\leq 1, \|y_j\|\leq 1} \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right|\leq K
+\]
+
+where the \(x_i\) and \(y_j\) are vectors in a Hilbert space \(H\).
+
+The theorem is true over both the real and complex fields, though with different values of the universal constants \(K_G^{\mathbb R}\) and \(K_G^{\mathbb C}\) (known as the /Grothendieck constants/. There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
+
+In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat [http://arxiv.org/abs/1101.4195 Pisier's survey]. You should also look at the book [http://books.google.com/books/about/The_Metric_Theory_of_Tensor_Products.html?id=VBg5cGSngRoC The Metric Theory of Tensor Products]by Diestel, Fourie, and Swart. If anything this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there. I hope to return to GT in future posts to describe the connection with tensor products, as well as its role in the failure of Ando's inequality in several variables (a connection observed by Varopoulos).
+
+The basic strategy of this proof (and of many other proofs of Theorem 1) is to realize inner products of vectors \(\langle x_i,y_j\rangle \) of vectors in Hilbert space as covariances of random variables; that is, we will find some probability space \(\Omega, \mathcal E,\mu\) and random variables \(X_1,\dots X_n, Y_1,\dots Y_n\) so that
+\[\tag{1}
+\langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n.
+\]
+Of course, merely realizing inner products as covariances in (1) is a triviality: fix a basis \(\{e_n\}\) for \(H\) and expand \(x_i\) as
+\[
+x_i = \sum_n \langle x_i, e_n\rangle e_n
+\]
+and similarly for the \(y\)'s. Now choose any probability space with \(L^2(\mu)\) infinite-dimensional, fix a basis \(\{\psi_n\}\) for \( L^2(\mu)\) and put
+\[
+X_i(\omega) =\sum_n \langle x_i, e_n\rangle \psi_n(\omega)
+\]
+and likewise define \(Y_j\). Then by orthonormality we have (1). With this construction, the random variables \(X_i,Y_j\) are \(L^2\) (or, since I should probably be consistent with the probabilistic language, they have finite variance); indeed by orthonormality again
+\[
+\text{var}(X_i) =\mathbb E|X_i|^2 =\sum_n|\langle x_i, e_n\rangle |^2 =\|x_i\|^2_H &lt;\infty.
+\]
+Of course, by itself this can't accomplish anything, since all we've done is embed \(H\) isomorphically into \(L^2(\mu)\). However, there are gains to be had if we can arrange that the random variables \(X_i,Y_j\) are better than \(L^2\): in fact, by the following lemma, if we could arrange to realize inner products as covariances of /bounded/ random variables, we would get an easy proof of Grothendieck's inequality:
+
+*Lemma 2* (\(L^\infty\)-flattening implies GT):
+
+Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+\[\tag{2}
+\langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
+\]
+and
+\[\tag{3}
+|X_i|\leq C, \quad |Y_j|\leq C \quad \text{almost surely, for all} i,j=1\dots n.
+\]
+Then Grothendieck's inequality holds with constant \(K=C^2\).
+
+*Proof.* Fix a matrix \( (a_{ij})\) satisfying the hypothesis of Theorem 1. Let the vectors \(x_i, y_j\) be given and consider the random variables \(X_i, Y_j\) as in the hypothesis of the lemma. Then
+using linearity of expectation and the trivial bound \(|\mathbb E(Z)|\leq \mathbb E(|Z|)\), we have
+\begin{align}
+\left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| &amp;= \left| \sum_{i,j=1}^n a_{ij} \mathbb E(X_iY_j) \right| \tag{4} \\
+&amp;= \left| \mathbb E\left(\sum_{i,j=1}^n a_{ij}X_iY_j\right)\right| \\
+&amp;\leq \mathbb E \left| \sum_{i,j=1}^n a_{ij}X_iY_j\right| \tag{5}
+\end{align}
+Now, since \(|X_i|, |Y_j|\leq C\) almost surely, we have by the hypothesis on \(a\)
+\[
+\left| \sum_{i,j=1}^n a_{ij}X_iY_j\right| \leq C^2 \quad \text{almost surely},
+\]
+so its expectation is bounded by \(C^2\) as well, so Grothendieck's inequality holds with \(K\leq C^2\). *.foorP*
+
+It turns out that there does indeed exists such a constant \(C\), and in fact the existence of uniformly bounded random variables as in the lemma is equivalent to Grothendieck's inequality. I hope to work through this in a later post; in the meantime you can find it it Pisier's survey. However, as far as I know there is no proof of Grothendieck using the lemma, because it seems like the only proof of the lemma uses Grothendieck's inequality. Instead, proofs of Grothendieck's inequality proceed by using the strategy suggested by the lemma, but weakening either (2) or (3) (or both). That is, one can keep (2) but give up almost sure boundedness, the strategy then is get enough control on the tails of the (now unbounded) random variables to still allow favorable estimates of the expectation in (5). This is the strategy we will follow below. On the other hand, one can give up (2) holding exactly and instead have it hold only approximately; the adjustment to the proof is then needed in (4). (It seems like this is the strategy in the proofs that give the best known constants.)
+
+As we just said, our strategy here will be to give up boundedness (3), since this seems very hard to get by any direct argument. And as we also noted above, it is trivial to get \(L^2\)-ness. As it turns out, however, if we can get anything better than \(L^2\), we win. That is, if we can realize inner products as covariances of random variables in \(L^p\) (sorry, with "finite \(p^{th}\) moments) for some \(p&gt;2\), (and of course, with uniform constants) we can prove GT:
+*Lemma 3* (\(L^p\)-flattening implies GT):
+
+Fix \(2&lt;p&lt;\infty\). Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+\[\tag{6}
+\langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
+\]
+and
+\[\tag{7}
+\mathbb E(|X_i|^p)\leq C, \quad \mathbb E(|Y_j|^p)\leq C \quad \text{for all } i,j=1\dots n.
+\]
+Then Grothendieck's inequality holds with constant \(K\) depending only on \(C\) and \(p\).</blockquote>
+<strong>Proof.</strong> We will exploit the basic trick of using a cutoff parameter to split an \(L^p\) function into its "big" and "small" parts (maybe "tall" and "wide" are better adjectives). Since we have an \(L^p\) estimate for some \(p&gt;2\), it will follow that the "big" part will have uniformly small \(L^2\) norm. Let us work in the general setting of \(L^p\) spaces for a moment; fix a measure space \(\Omega, \mathcal E,\mu)\) and \(f\in L^p\). Choose a parameter \(M&gt;0\) and define the cut-off functions
+\[
+f^M =\begin{cases} f(\omega) &amp; |f(\omega)|&gt;M \\
+0 &amp; |f(\omega)| \leq M\end{cases}
+\]
+and
+\[
+f_M =\begin{cases} f(\omega) &amp; |f(\omega)|\leq M \\
+0 &amp; |f(\omega)| &gt;M\end{cases}
+\]
+We have \(f=f_M+f^M\). Trivially, \( f_M\in L^\infty\) and \(\|f_M\|_\infty\leq M\). On the other hand, the "big" part \( f^M\) will belong to \(L^q\) for all \(1\leq q\leq p\). In particular in our case \(p&gt;2\) we have the standard estimate
+\[\tag{8}
+\|f^M\|_2^2 \leq\int |f^M|^2 \, d\mu =\int \frac{|f^M|^p}{|f^M|^{p-2}}\, d\mu \leq\frac{1}{M^{p-2}}\int_{|f|&gt;M} |f|^p\, d\mu\leq \frac{1}{M^{p-2}}\|f\|_p^p.
+\]
+
+Now we can begin the proof of the lemma proper: fix \(n\) and the (\n\tiems n\) matrix \(a\); we will define two norms on \(a\) (namely, the two quantities we are interested in):
+\[
+\|a\|:= \sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|,
+\]
+
+\[
+\||a|\|:= \sup_{\|x_i\|\leq 1, \|y_j\|\leq 1} \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right|
+\]
+It is clear that both of these quantities are finite. Now fix the vectors \( x_1, \dots x_n, y_1,\dots y_n\) and the random variables \(X_i, Y_j\) associated to them as in the hypotheses. Fix a cutoff paramater \(M\) (to be specified later) and consider the splittings
+\[
+X_i = (X_i)_M+(X_i)^M
+\]
+and likewise for the \(Y\)'s. By definition we have \(\|(X_i)_M\|_\infty\leq M\) and from (8) we have \(\|(X_i)^M\|_2^2\leq M^{2-p}C\). Also, since we are on a space of finite measure, we have \(L^p\subset L^2\) boundedly for \(p&gt;2\), so \(\|X_i\|_2\leq C^\prime\) with \(C^\prime\) depending only on \(C\) and \(p\). Let us write
+\begin{align}\tag{9}
+XY &amp;= X (Y_M+Y^M) \\
+&amp;= (X_M+X^M)Y_M +XY^M \\
+&amp;= X_MY_M +X^M Y_M + XY^M.
+\end{align}
+Proceeding as in the proof of Lemma 2, we have
+\[
+\left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| = \left| \mathbb E\left(\sum_{i,j=1}^n a_{ij}X_iY_j\right)\right|
+\]
+We split each term \(X_iY_j\) as in (9) and bound the three terms separately: first, we have
+\[
+\left| \mathbb E\left(\sum_{i,j=1}^n a_{ij}(X_i)_M(Y_j)_M\right)\right|\leq M^2\|a\|
+\]
+by the same argument as Lemma 2, since \(|X_M|, |Y_M|\leq M\) almost surely. Now, all we have to do is control the contributions from the remaining tail terms \(X^M, Y^M\). To do this, first note that
+\[
+\mathbb E((X_i)^M(Y_j)_M)=\langle (X_i)^M, (Y_j)_M\rangle_{L^2(\mu)}
+\]
+so by the definition of the \( |\| \cdot\||\) norm,
+\begin{align}
+\left| \mathbb E\left(\sum_{i,j=1}^n a_{ij}(X_i)^M(Y_j)_M\right)\right|&amp;\leq |\|a\|| \max_i \|(X_i)^M\|_2\max_j\|(Y_j)_M\|_2 \\
+&amp;\leq M^{1-{p/2}}C^{1/2} C^\prime |\|a\||
+\end{align}
+Likewise for the last term
+\[
+\left| \mathbb E\left(\sum_{i,j=1}^n a_{ij}(X_i)(Y_j)^M\right)\right| \leq M^{1-{p/2}}C^{1/2} C^\prime |\|a\||.
+\]
+
+Putting it all together we have
+\[
+\left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| \leq M^2\|a\| + 2M^{1-{p/2}}C^{1/2} C^\prime |\|a\||.
+\]
+Taking the supremum over unit vectors \(x_i, y_j\) in the left-hand side we get
+\[\tag{10}
+|\|a\|| \leq M^2\|a\| + \frac{2C^{1/2} C^\prime}{M^{{p/2}-1}} |\|a\||
+\]
+so by taking \( M\) sufficiently large we can move \(|\|a\||\) to the left hand side and conclude finally that
+\[
+|\|a\||\leq K(C,p)\|a\|.
+\]
+
+<strong>.foorP</strong>
+
+I'll refer to the process of passing from the vectors \(x_i, y_j\) to the random variables \(X_i, Y_j\) as <em>flattening</em>; the idea being that we are placing the vectors into \(L^2(\mu)\) in such a way that inner products are preserved, but so that the functions themselves lie in \(L^p\) for some larger \(p\), and are thus in a sense "flatter" than typical \(L^2\) functions. So, Lemma 3 says that (uniform) flattening implies GT, and so from the point of view we've set up, the reason GT is true is that flattening is possible. It is accomplished by using not just any orthonormal set to embed \(H\) in \(L^2\), but an orthonormal set consisting of an appropriate system of <em>independent</em> random variables; we thus have an illustration of how much stronger independence is than mere orthogonality.
+
+To accomplish the flattening, we recall the <em>Rademacher system</em>, which is an independent sequence of random variables, each taking the values \(\pm1\) with probability \(1/2\). Concretely we can construct such a system in \(L^2[0,1]\) by letting \(r_n(x)=2\beta_n(x)-1\), where \(\beta_n(x)\) denotes the \(n^{th}\) digit in the binary expansion of the real number \(x\in[0,1]\) (we can of course ignore the non-uniqueness of binary expansions, since this occurs only for a Lebesgue null (in fact, countable) set of \( x\)). Alternatively we have
+\[
+r_n(x) = \text{sgn}\sin(2^n\pi x), n=1, 2, \dots.
+\]
+Or, finally, in words, \( r_n\) is a square wave with frequency \( 2^n\).
+
+Each \(r_n\) has mean \(0\) and variance \(1\), so by independence we have
+\[
+\mathbb E(r_nr_m) =\delta_{nm}
+\]
+So, as realized in \(L^2\) the \(r_n\) are orthonormal. In particular for any \(\ell^2\) sequence of scalars \((a_n)\) we have
+\[
+\left\| \sum_n a_n r_n\right\|^2 =\sum_n |a_n|^2.
+\]
+However, the <em>independence</em> of the \( r_n\) buys us more than this, since it allows us to control higher-degree products such as \( \mathbb E(r_ir_jr_kr_l)\). In particular we have:
+<blockquote><strong>Lemma 4</strong> ( \(L^4\) flattening of Hilbert space)
+Let \((r_N)_{n=1}^\infty\) be a Rademacher system. Then for every \(\ell^2\) sequence of real scalars \((a_n)_{n=1}^\infty\), we have
+\[
+\|\sum a_nr_n\|_4 \leq 3^{1/4} \|\sum_n a_n r_n\|_2.
+\]</blockquote>
+<strong>Proof.</strong> We may assume that only finitely many of the \( a_n\) are nonzero, and normalize so that \( \|\sum_n a_n r_n\|_2 = \sum_n a_n^2=1\). Now
+\begin{align}
+\|\sum a_nr_n\|_4^4 &amp;=\int_0^1\left(\sum_n a_n r_n(x) \right)^4\, dx \\
+&amp;= \sum_{i,j,k,l}a_ia_ja_ka_l\int_0^1 r_i(x)r_j(x)r_k(x)r_l(x)\, dx \\
+&amp;= \sum_{i,j,k,l}a_ia_ja_ka_l\mathbb E(r_ir_jr_kr_l).
+\end{align}
+Pondering independence, we see that \( \mathbb E(r_ir_jr_kr_l)\) vanishes if the \(i,j,k,l\) are all distinct. If two are equal, say \(i=j\), then since \(r_n^2\equiv 1\) we get \( \mathbb E(r_kr_l)\), so the expression \( \mathbb E(r_ir_jr_kr_l)\) is equal to \(1\) if the indices \(i,j,k,l\) occur in two matching pairs, and is \(0\) otherwise. Labeling the matching pairs and compensating for double-counting we have
+\begin{align}
+\|\sum a_nr_n\|_4^4 &amp;=\sum_{i,j} a_i^2a_j^2 + \sum_{i,k} a_i^2a_k^2 + \sum_{i,l} a_i^2a_l^2 -2\sum_i a_i^4 \\
+&amp;\leq \sum_i a_i^2 \left(\sum_j a_j^2 + \sum_k a_k^2 + \sum_l a_l^2 \right) \\
+&amp;\leq 3
+\end{align}
+by our normalization, which proves the lemma. <strong>.foorP</strong>
+
+Of course, since the \(r_n\) are real-valued we can deduce an inequality in the complex case by taking real and imaginary parts, at the cost of an extra factor of \(\sqrt{2}\) in the constant. At this point, anyone who actually understands these things (and has read this far) is shouting "Khinchin's inequality!" at their computer, so I should at least record that what we have called the "flattening lemma" is really a special case of:
+<blockquote><strong>Theorem 2</strong> (Khinchin's inequality):
+
+Let \(r_n\) be a Rademacher system and \((a_n)\) a sequence of scalars. Then for all \(1\leq p&lt;\infty\), we have
+\[
+\left\| \sum_n a_n r_n\right\|_p\approx \left(\sum_n|a_n|^2\right)^{1/2}
+\]
+where the implied constants depend only on \(p\).</blockquote>
+I won't prove this here, but might return to it in a later post. At any rate, using either Khinchin's inequality or our pedestrian version, we now get a proof of GT: given the vectors \( x_i, y_j\), expand them in an orthonormal basis of \( H\) as \( x_i=\sum_n\langle x_i,e_n\rangle e_n\), and make these the coefficients of the Rademacher functions: put
+\[
+X_i(\omega):=\sum_n \langle x_i, e_n\rangle r_n(\omega)
+\]
+and the same for the \(y\)'s. Now (in the real case) the hypotheses of the \(L^p\) flattening lemma (Lemma 3) are satisfied with \( p=4\), \( C=3\), and \(C^\prime=1\), so that digging through the proof again (or rather, just looking at (10)) we get an estimate for the constant \(K\) in terms of the cutoff parameter \(M\):
+\[
+K^\mathbb R_G\leq \frac{M^2}{1-\frac{2\sqrt{3}}{M}}
+\]
+which, optimizing in \(M\), works out to (I think) \(M=3\sqrt{3}\) which gives \(K_G^{\mathbb R}\leq 81\), which isn't very good (the best known value is \(\leq 1.78\)). By managing the cutoff a little more subtly, one can improve the constant attainable by this method to \(\frac{81}{16} = 5.0625\) (this is what comes from the proof as described in Diestel/Fourie/Swart).
