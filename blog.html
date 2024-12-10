@@ -10,19 +10,26 @@
 </script>
 <!-- End MathJax -->
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Why is Grothendieck's inequality true? </title>
+<title></title>
 </head>
 <body>
-<div id="layout-content">
-<div id="toptitle">
-<h1>Why is Grothendieck's inequality true? </h1>
-<div id="subtitle">The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form:
-</div>
-</div>
-<p><b>Theorem 1.</b> (Grothendieck's Theorem (GT))
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Mike Jury's webpage</div>
+<div class="menu-item"><a href="index.html">home</a></div>
+<div class="menu-category">Blog</div>
+<div class="menu-item"><a href="entry-1.html" class="current">entry-1</a></div>
+</td>
+<td id="layout-content">
+
+<h2>Why is Grothendieck's inequality true?</h2>
+<h3>14 August 2024</h3>
+
+<p>The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form:
 </p>
-<p><p style="text-align:center">
-There is a universal constant \[K\] with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
+<p>
+*Theorem 1.* There is a universal constant \( K \) with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
 \[
 \sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|\leq 1.
 \]
@@ -33,13 +40,13 @@ Then
 where the \(x_i\) and \(y_j\) are vectors in a Hilbert space \(H\).
 
 </p></p>
-<p><p style="text-align:center">
-The theorem is true over both the real and complex fields, though with different values of the universal constants \[K_G^{\mathbb R}\] and \(K_G^{\mathbb C}\) (known as the /Grothendieck constants/. There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
+<p>
+The theorem is true over both the real and complex fields, though with different values of the universal constants \(K_G^{\mathbb R}\) and \(K_G^{\mathbb C}\) (known as the /Grothendieck constants/. There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
 
 </p></p>
 <p>In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat <a href="http://arxiv.org/abs/1101.4195" target=&ldquo;blank&rdquo;>Pisier's survey</a>. You should also look at the book <a href="http://books.google.com/books/about/The_Metric_Theory_of_Tensor_Products.html?id=VBg5cGSngRoC" target=&ldquo;blank&rdquo;>The Metric Theory of Tensor Products</a>by Diestel, Fourie, and Swart. If anything this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there. I hope to return to GT in future posts to describe the connection with tensor products, as well as its role in the failure of Ando's inequality in several variables (a connection observed by Varopoulos).
 </p>
-<p><p style="text-align:center">
+<p>
 The basic strategy of this proof (and of many other proofs of Theorem 1) is to realize inner products of vectors \[\langle x_i,y_j\rangle \] of vectors in Hilbert space as covariances of random variables; that is, we will find some probability space \(\Omega, \mathcal E,\mu\) and random variables \(X_1,\dots X_n, Y_1,\dots Y_n\) so that
 \[\tag{1}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n.
@@ -59,12 +66,12 @@ and likewise define \(Y_j\). Then by orthonormality we have (1). With this const
 Of course, by itself this can't accomplish anything, since all we've done is embed \(H\) isomorphically into \(L^2(\mu)\). However, there are gains to be had if we can arrange that the random variables \(X_i,Y_j\) are better than \(L^2\): in fact, by the following lemma, if we could arrange to realize inner products as covariances of /bounded/ random variables, we would get an easy proof of Grothendieck's inequality:
 
 </p></p>
-<p><p style="text-align:center">
-*Lemma 2* (\[L^\infty\]-flattening implies GT):
+<p>
+*Lemma 2* (\(L^\infty\)-flattening implies GT):
 
 </p></p>
-<p><p style="text-align:center">
-Suppose there exists a constant \[C&amp;gt;0\] with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+<p>
+Suppose there exists a constant \(K\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{2}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]
@@ -75,8 +82,8 @@ and
 Then Grothendieck's inequality holds with constant \(K=C^2\).
 
 </p></p>
-<p><p style="text-align:center">
-*Proof.* Fix a matrix \[ (a_{ij})\] satisfying the hypothesis of Theorem 1. Let the vectors \(x_i, y_j\) be given and consider the random variables \(X_i, Y_j\) as in the hypothesis of the lemma. Then
+<p>
+*Proof.* Fix a matrix \( (a_{ij})\) satisfying the hypothesis of Theorem 1. Let the vectors \(x_i, y_j\) be given and consider the random variables \(X_i, Y_j\) as in the hypothesis of the lemma. Then
 using linearity of expectation and the trivial bound \(|\mathbb E(Z)|\leq \mathbb E(|Z|)\), we have
 \begin{align}
 \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| &amp;= \left| \sum_{i,j=1}^n a_{ij} \mathbb E(X_iY_j) \right| \tag{4} \\
@@ -90,17 +97,19 @@ Now, since \(|X_i|, |Y_j|\leq C\) almost surely, we have by the hypothesis on \(
 so its expectation is bounded by \(C^2\) as well, so Grothendieck's inequality holds with \(K\leq C^2\). *.foorP*
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 It turns out that there does indeed exists such a constant \[C\], and in fact the existence of uniformly bounded random variables as in the lemma is equivalent to Grothendieck's inequality. I hope to work through this in a later post; in the meantime you can find it it Pisier's survey. However, as far as I know there is no proof of Grothendieck using the lemma, because it seems like the only proof of the lemma uses Grothendieck's inequality. Instead, proofs of Grothendieck's inequality proceed by using the strategy suggested by the lemma, but weakening either (2) or (3) (or both). That is, one can keep (2) but give up almost sure boundedness, the strategy then is get enough control on the tails of the (now unbounded) random variables to still allow favorable estimates of the expectation in (5). This is the strategy we will follow below. On the other hand, one can give up (2) holding exactly and instead have it hold only approximately; the adjustment to the proof is then needed in (4). (It seems like this is the strategy in the proofs that give the best known constants.)
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 As we just said, our strategy here will be to give up boundedness (3), since this seems very hard to get by any direct argument. And as we also noted above, it is trivial to get \[L^2\]-ness. As it turns out, however, if we can get anything better than \(L^2\), we win. That is, if we can realize inner products as covariances of random variables in \(L^p\) (sorry, with "finite \(p^{th}\) moments) for some \(p&gt;2\), (and of course, with uniform constants) we can prove GT:
+</p></p>
+<p>
 *Lemma 3* (\(L^p\)-flattening implies GT):
 
-</p></p>
-<p><p style="text-align:center">
-Fix \[2&amp;lt;p&amp;lt;\infty\]. Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+
+<p>
+Fix \(2&lt;p&lt;\infty\). Suppose there exists a constant \(C>0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{6}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]
@@ -109,6 +118,7 @@ and
 \mathbb E(|X_i|^p)\leq C, \quad \mathbb E(|Y_j|^p)\leq C \quad \text{for all } i,j=1\dots n.
 \]
 Then Grothendieck's inequality holds with constant \(K\) depending only on \(C\) and \(p\).</blockquote>
+<p>
 <strong>Proof.</strong> We will exploit the basic trick of using a cutoff parameter to split an \(L^p\) function into its &ldquo;big&rdquo; and &ldquo;small&rdquo; parts (maybe &ldquo;tall&rdquo; and &ldquo;wide&rdquo; are better adjectives). Since we have an \(L^p\) estimate for some \(p&gt;2\), it will follow that the &ldquo;big&rdquo; part will have uniformly small \(L^2\) norm. Let us work in the general setting of \(L^p\) spaces for a moment; fix a measure space \(\Omega, \mathcal E,\mu)\) and \(f\in L^p\). Choose a parameter \(M&gt;0\) and define the cut-off functions
 \[
 f^M =\begin{cases} f(\omega) &amp; |f(\omega)|&gt;M \\
@@ -125,14 +135,14 @@ We have \(f=f_M+f^M\). Trivially, \( f_M\in L^\infty\) and \(\|f_M\|_\infty\leq 
 \]
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 Now we can begin the proof of the lemma proper: fix \[n\] and the (\n\tiems n\) matrix \(a\); we will define two norms on \(a\) (namely, the two quantities we are interested in):
 \[
 \|a\|:= \sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|,
 \]
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 \[
 \||a|\|:= \sup_{\|x_i\|\leq 1, \|y_j\|\leq 1} \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right|
 \]
@@ -169,7 +179,7 @@ Likewise for the last term
 \]
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 Putting it all together we have
 \[
 \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| \leq M^2\|a\| + 2M^{1-{p/2}}C^{1/2} C^\prime |\|a\||.
@@ -186,11 +196,11 @@ so by taking \( M\) sufficiently large we can move \(|\|a\||\) to the left hand 
 </p></p>
 <p>&lt;strong&gt;.foorP&lt;/strong&gt;
 </p>
-<p><p style="text-align:center">
+<p>
 I'll refer to the process of passing from the vectors \[x_i, y_j\] to the random variables \(X_i, Y_j\) as <em>flattening</em>; the idea being that we are placing the vectors into \(L^2(\mu)\) in such a way that inner products are preserved, but so that the functions themselves lie in \(L^p\) for some larger \(p\), and are thus in a sense &ldquo;flatter&rdquo; than typical \(L^2\) functions. So, Lemma 3 says that (uniform) flattening implies GT, and so from the point of view we've set up, the reason GT is true is that flattening is possible. It is accomplished by using not just any orthonormal set to embed \(H\) in \(L^2\), but an orthonormal set consisting of an appropriate system of <em>independent</em> random variables; we thus have an illustration of how much stronger independence is than mere orthogonality.
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 To accomplish the flattening, we recall the <em>Rademacher system</em>, which is an independent sequence of random variables, each taking the values \[\pm1\] with probability \(1/2\). Concretely we can construct such a system in \(L^2[0,1]\) by letting \(r_n(x)=2\beta_n(x)-1\), where \(\beta_n(x)\) denotes the \(n^{th}\) digit in the binary expansion of the real number \(x\in[0,1]\) (we can of course ignore the non-uniqueness of binary expansions, since this occurs only for a Lebesgue null (in fact, countable) set of \( x\)). Alternatively we have
 \[
 r_n(x) = \text{sgn}\sin(2^n\pi x), n=1, 2, \dots.
@@ -198,7 +208,7 @@ r_n(x) = \text{sgn}\sin(2^n\pi x), n=1, 2, \dots.
 Or, finally, in words, \( r_n\) is a square wave with frequency \( 2^n\).
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 Each \[r_n\] has mean \(0\) and variance \(1\), so by independence we have
 \[
 \mathbb E(r_nr_m) =\delta_{nm}
@@ -228,12 +238,12 @@ Pondering independence, we see that \( \mathbb E(r_ir_jr_kr_l)\) vanishes if the
 by our normalization, which proves the lemma. <strong>.foorP</strong>
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 Of course, since the \[r_n\] are real-valued we can deduce an inequality in the complex case by taking real and imaginary parts, at the cost of an extra factor of \(\sqrt{2}\) in the constant. At this point, anyone who actually understands these things (and has read this far) is shouting &ldquo;Khinchin's inequality!&rdquo; at their computer, so I should at least record that what we have called the &ldquo;flattening lemma&rdquo; is really a special case of:
 <blockquote><strong>Theorem 2</strong> (Khinchin's inequality):
 
 </p></p>
-<p><p style="text-align:center">
+<p>
 Let \[r_n\] be a Rademacher system and \((a_n)\) a sequence of scalars. Then for all \(1\leq p&lt;\infty\), we have
 \[
 \left\| \sum_n a_n r_n\right\|_p\approx \left(\sum_n|a_n|^2\right)^{1/2}
@@ -249,11 +259,14 @@ K^\mathbb R_G\leq \frac{M^2}{1-\frac{2\sqrt{3}}{M}}
 \]
 which, optimizing in \(M\), works out to (I think) \(M=3\sqrt{3}\) which gives \(K_G^{\mathbb R}\leq 81\), which isn't very good (the best known value is \(\leq 1.78\)). By managing the cutoff a little more subtly, one can improve the constant attainable by this method to \(\frac{81}{16} = 5.0625\) (this is what comes from the proof as described in Diestel/Fourie/Swart).
 </p></p>
+</div>
 <div id="footer">
 <div id="footer-text">
-Page last updated 2024-08-07 15:04:47 EDT. This page is probably not optimized for your browser.
+Page last updated 2024-08-14 11:12:30 EDT. This page is probably not optimized for your browser.
 </div>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </body>
 </html>

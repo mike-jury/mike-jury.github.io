@@ -1,11 +1,18 @@
-# jemdoc: menu{MENU-blog}{entry-1.html}
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
 
-== Why is Grothendieck's inequality true?
-=== 14 August 2024
 
 The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form:
+<blockquote><strong>Theorem 1.</strong>(Grothendieck's Theorem (GT))
 
-*Theorem 1.* There is a universal constant \( K \) with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
+There is a universal constant \(K\) with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
 \[
 \sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|\leq 1.
 \]
@@ -13,14 +20,10 @@ Then
 \[
 \sup_{\|x_i\|\leq 1, \|y_j\|\leq 1} \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right|\leq K
 \]
-where the \(x_i\) and \(y_j\) are vectors in a Hilbert space \(H\).
+where the \(x_i\) and \(y_j\) are vectors in a Hilbert space \(H\).</blockquote>
+The theorem is true over both the real and complex fields, though with different values of the universal constants \(K_G^{\mathbb R}\) and \(K_G^{\mathbb C}\) (known as the <em>Grothendieck constants</em>). There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
 
-
-
-
-The theorem is true over both the real and complex fields, though with different values of the universal constants \(K_G^{\mathbb R}\) and \(K_G^{\mathbb C}\) (known as the /Grothendieck constants/. There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
-
-In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat [http://arxiv.org/abs/1101.4195 Pisier's survey]. You should also look at the book [http://books.google.com/books/about/The_Metric_Theory_of_Tensor_Products.html?id=VBg5cGSngRoC The Metric Theory of Tensor Products]by Diestel, Fourie, and Swart. If anything this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there. I hope to return to GT in future posts to describe the connection with tensor products, as well as its role in the failure of Ando's inequality in several variables (a connection observed by Varopoulos).
+In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat <a href="http://arxiv.org/abs/1101.4195">Pisier's survey.</a> You should also look at the book <a href="http://books.google.com/books/about/The_Metric_Theory_of_Tensor_Products.html?id=VBg5cGSngRoC">The Metric Theory of Tensor Products </a> by Diestel, Fourie, and Swart. If anything this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there. I hope to return to GT in future posts to describe the connection with tensor products, as well as its role in the failure of Ando's inequality in several variables (a connection observed by Varopoulos).
 
 The basic strategy of this proof (and of many other proofs of Theorem 1) is to realize inner products of vectors \(\langle x_i,y_j\rangle \) of vectors in Hilbert space as covariances of random variables; that is, we will find some probability space \(\Omega, \mathcal E,\mu\) and random variables \(X_1,\dots X_n, Y_1,\dots Y_n\) so that
 \[\tag{1}
@@ -38,11 +41,10 @@ and likewise define \(Y_j\). Then by orthonormality we have (1). With this const
 \[
 \text{var}(X_i) =\mathbb E|X_i|^2 =\sum_n|\langle x_i, e_n\rangle |^2 =\|x_i\|^2_H &lt;\infty.
 \]
-Of course, by itself this can't accomplish anything, since all we've done is embed \(H\) isomorphically into \(L^2(\mu)\). However, there are gains to be had if we can arrange that the random variables \(X_i,Y_j\) are better than \(L^2\): in fact, by the following lemma, if we could arrange to realize inner products as covariances of /bounded/ random variables, we would get an easy proof of Grothendieck's inequality:
+Of course, by itself this can't accomplish anything, since all we've done is embed \(H\) isomorphically into \(L^2(\mu)\). However, there are gains to be had if we can arrange that the random variables \(X_i,Y_j\) are better than \(L^2\): in fact, by the following lemma, if we could arrange to realize inner products as covariances of <em>bounded</em> random variables, we would get an easy proof of Grothendieck's inequality:
+<blockquote><strong>Lemma 2</strong>(\(L^\infty\)-flattening implies GT):
 
-*Lemma 2* (\(L^\infty\)-flattening implies GT):
-
-Suppose there exists a constant \(K\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{2}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]
@@ -50,9 +52,8 @@ and
 \[\tag{3}
 |X_i|\leq C, \quad |Y_j|\leq C \quad \text{almost surely, for all} i,j=1\dots n.
 \]
-Then Grothendieck's inequality holds with constant \(K=C^2\).
-
-*Proof.* Fix a matrix \( (a_{ij})\) satisfying the hypothesis of Theorem 1. Let the vectors \(x_i, y_j\) be given and consider the random variables \(X_i, Y_j\) as in the hypothesis of the lemma. Then
+Then Grothendieck's inequality holds with constant \(K=C^2\).</blockquote>
+<strong>Proof.</strong> Fix a matrix \( (a_{ij})\) satisfying the hypothesis of Theorem 1. Let the vectors \(x_i, y_j\) be given and consider the random variables \(X_i, Y_j\) as in the hypothesis of the lemma. Then
 using linearity of expectation and the trivial bound \(|\mathbb E(Z)|\leq \mathbb E(|Z|)\), we have
 \begin{align}
 \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right| &amp;= \left| \sum_{i,j=1}^n a_{ij} \mathbb E(X_iY_j) \right| \tag{4} \\
@@ -63,14 +64,14 @@ Now, since \(|X_i|, |Y_j|\leq C\) almost surely, we have by the hypothesis on \(
 \[
 \left| \sum_{i,j=1}^n a_{ij}X_iY_j\right| \leq C^2 \quad \text{almost surely},
 \]
-so its expectation is bounded by \(C^2\) as well, so Grothendieck's inequality holds with \(K\leq C^2\). *.foorP*
+so its expectation is bounded by \(C^2\) as well, so Grothendieck's inequality holds with \(K\leq C^2\). <strong>.foorP</strong>
 
 It turns out that there does indeed exists such a constant \(C\), and in fact the existence of uniformly bounded random variables as in the lemma is equivalent to Grothendieck's inequality. I hope to work through this in a later post; in the meantime you can find it it Pisier's survey. However, as far as I know there is no proof of Grothendieck using the lemma, because it seems like the only proof of the lemma uses Grothendieck's inequality. Instead, proofs of Grothendieck's inequality proceed by using the strategy suggested by the lemma, but weakening either (2) or (3) (or both). That is, one can keep (2) but give up almost sure boundedness, the strategy then is get enough control on the tails of the (now unbounded) random variables to still allow favorable estimates of the expectation in (5). This is the strategy we will follow below. On the other hand, one can give up (2) holding exactly and instead have it hold only approximately; the adjustment to the proof is then needed in (4). (It seems like this is the strategy in the proofs that give the best known constants.)
 
 As we just said, our strategy here will be to give up boundedness (3), since this seems very hard to get by any direct argument. And as we also noted above, it is trivial to get \(L^2\)-ness. As it turns out, however, if we can get anything better than \(L^2\), we win. That is, if we can realize inner products as covariances of random variables in \(L^p\) (sorry, with "finite \(p^{th}\) moments) for some \(p&gt;2\), (and of course, with uniform constants) we can prove GT:
-*Lemma 3* (\(L^p\)-flattening implies GT):
+<blockquote><strong>Lemma 3</strong> (\(L^p\)-flattening implies GT):
 
-Fix \(2<p<\infty\). Suppose there exists a constant \(C>0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+Fix \(2&lt;p&lt;\infty\). Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{6}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]

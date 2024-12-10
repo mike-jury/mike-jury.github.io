@@ -11,8 +11,6 @@ body {
 	font-family: Georgia, serif;
 	padding-bottom: 8px;
 	margin: 0;
-/*	word-wrap: break-word;
-	max-width: 120ch; */
 }
 
 #layout-menu {

@@ -1,11 +1,9 @@
-# jemdoc: menu{MENU-blog}{entry-1.html}
-
-== Why is Grothendieck's inequality true?
-=== 14 August 2024
-
+== Why is Grothendieck's inequality true? 
 The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form:
 
-*Theorem 1.* There is a universal constant \( K \) with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
+*Theorem 1.* (Grothendieck's Theorem (GT))
+
+There is a universal constant \(K\) with the following property: let \(a_{ij}\) be an \(n\times n\) matrix and suppose that
 \[
 \sup_{|s_i|\leq 1, |t_j|\leq 1} \left| \sum_{i,j=1}^n a_{ij}s_i t_j\right|\leq 1.
 \]
@@ -14,9 +12,6 @@ Then
 \sup_{\|x_i\|\leq 1, \|y_j\|\leq 1} \left| \sum_{i,j=1}^n a_{ij}\langle x_i, y_j\rangle_H \right|\leq K
 \]
 where the \(x_i\) and \(y_j\) are vectors in a Hilbert space \(H\).
-
-
-
 
 The theorem is true over both the real and complex fields, though with different values of the universal constants \(K_G^{\mathbb R}\) and \(K_G^{\mathbb C}\) (known as the /Grothendieck constants/. There are many proofs of Grothendieck's inequality available; in this post I'd like to discuss one of them, due essentially to Andrew Tonge, which (although it does not produce the best values of \(K_G\)) has the advantage of being conceptually very simple, so that I even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
 
@@ -42,7 +37,7 @@ Of course, by itself this can't accomplish anything, since all we've done is emb
 
 *Lemma 2* (\(L^\infty\)-flattening implies GT):
 
-Suppose there exists a constant \(K\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{2}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]
@@ -70,7 +65,7 @@ It turns out that there does indeed exists such a constant \(C\), and in fact th
 As we just said, our strategy here will be to give up boundedness (3), since this seems very hard to get by any direct argument. And as we also noted above, it is trivial to get \(L^2\)-ness. As it turns out, however, if we can get anything better than \(L^2\), we win. That is, if we can realize inner products as covariances of random variables in \(L^p\) (sorry, with "finite \(p^{th}\) moments) for some \(p&gt;2\), (and of course, with uniform constants) we can prove GT:
 *Lemma 3* (\(L^p\)-flattening implies GT):
 
-Fix \(2<p<\infty\). Suppose there exists a constant \(C>0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
+Fix \(2&lt;p&lt;\infty\). Suppose there exists a constant \(C&gt;0\) with the following property: whenever \(x_1, \dots x_n, y_1,\dots y_n\) are vectors in the unit ball of a Hilbert space \(H\), there exist a probability space \((\Omega, \mathcal E, \mu)\) and random variables \( X_1, \dots X_n, Y_1\dots Y_n\) on \(\Omega\) such that
 \[\tag{6}
 \langle x_i,y_j\rangle_H = \mathbb E (X_i Y_j) \quad i,j=1\dots n
 \]
