@@ -174,3 +174,8 @@ mjx-container {
     border-bottom: none;
   }
 }
+.talk {
+  display: inline-block;
+  width: 1.2em;
+  font-weight: bold;
+}
