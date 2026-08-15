@@ -1,15 +1,30 @@
+/* =========================================================
+   Base
+   ========================================================= */
+
 body {
-  max-width: 680px;
+  max-width: 800px;
   margin: 2em auto;
   padding: 0 1em;
   font-family: sans-serif;
   line-height: 1.6;
+  color: #000;
+  background: #fff;
 }
 
 nav {
   margin-bottom: 2em;
   font-family: sans-serif;
   font-size: 0.9em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0000EE;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 h1 {
@@ -37,21 +52,27 @@ footer {
   font-family: sans-serif;
 }
 
+
+/* =========================================================
+   Homepage
+   ========================================================= */
+
 .headshot {
   float: right;
   margin: 0 0 1em 1.5em;
   width: 200px;
   border-radius: 4px;
 }
-/* Blog */
 
-.blog-page {
-  max-width: 800px;
-}
+
+/* =========================================================
+   Blog
+   ========================================================= */
 
 .blog-layout {
   display: flex;
   gap: 2em;
+  align-items: flex-start;
 }
 
 .blog-sidebar {
@@ -66,8 +87,9 @@ footer {
 }
 
 .blog-sidebar ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .blog-sidebar li {
@@ -83,8 +105,22 @@ footer {
   text-decoration: underline;
 }
 
+
+/* =========================================================
+   Blog post content
+   ========================================================= */
+
 .main-content {
   flex: 1;
+  min-width: 0;
+}
+
+.main-content h1 {
+  margin-top: 0;
+}
+
+.main-content h2 {
+  margin-top: 2em;
 }
 
 .post-date {
@@ -94,15 +130,34 @@ footer {
   margin-bottom: 1em;
 }
 
-/* Blog posts */
 
-.blog-post h2 {
-  margin-top: 2em;
+/* =========================================================
+   MathJax
+   ========================================================= */
+
+/*
+   Prevent very long equations from forcing the page wider
+   than the viewport.
+*/
+
+mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-/* Stack the sidebar on small screens */
 
-@media (max-width: 500px) {
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    margin: 1em auto;
+    padding: 0 1em;
+  }
+
   .blog-layout {
     flex-direction: column;
     gap: 1em;
@@ -110,6 +165,7 @@ footer {
 
   .blog-sidebar {
     flex: auto;
+    width: 100%;
     border-bottom: 1px solid #ccc;
     padding-bottom: 1em;
   }
@@ -117,7 +173,4 @@ footer {
   .blog-sidebar h2 {
     border-bottom: none;
   }
-}
-.blog-post:first-child h2 {
-  margin-top: 0;
 }
