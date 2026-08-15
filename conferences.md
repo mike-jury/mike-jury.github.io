@@ -6,8 +6,6 @@ permalink: /conferences.html
 
 # talks and conferences
 
-Items marked with (*) are conferences at which I have given a talk (or plan to).
-
 ---
 
 ## upcoming
