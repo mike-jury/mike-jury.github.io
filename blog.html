@@ -1,0 +1,62 @@
+---
+title: Blog
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog - Mike Jury</title>
+
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+
+<body class="blog-page">
+
+  {% include menu.html %}
+
+  <h1>Blog</h1>
+
+  <div class="blog-layout">
+
+    <aside class="blog-sidebar">
+      {% include blog-menu.html %}
+    </aside>
+
+    <main class="main-content">
+
+      {% for post in site.posts %}
+        <article class="blog-post">
+
+          <h2>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+          </h2>
+
+          <div class="post-date">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </div>
+
+          {{ post.excerpt }}
+
+          <p>
+            <a href="{{ post.url | relative_url }}">Read more...</a>
+          </p>
+
+        </article>
+      {% endfor %}
+
+    </main>
+
+  </div>
+
+  <footer>
+
+  </footer>
+
+</body>
+</html>

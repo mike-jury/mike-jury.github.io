@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }} - Mike Jury</title>
+
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      }
+    };
+  </script>
+
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+<body class="blog-page">
+
+  {% include menu.html %}
+
+  <div class="blog-layout">
+
+    <aside class="blog-sidebar">
+      {% include blog-menu.html %}
+    </aside>
+
+    <main class="main-content">
+
+      <article class="blog-post">
+
+        <h1>{{ page.title }}</h1>
+
+        <div class="post-date">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </div>
+
+        {{ content }}
+
+      </article>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
