@@ -112,7 +112,7 @@ Then Grothendieck's inequality holds with constant $$K=C^2$$.
 
 ### Proof
 
-Fix a matrix $$(a_{ij})$$ satisfying the hypothesis of Theorem 1. Let the vectors $$x_i,y_j$$ be given and consider the random variables $$X_i,Y_j$$ as in the hypothesis of the lemma. Then, using linearity of expectation and the trivial bound $$|\mathbb E(Z)|\leq\mathbb E(|Z|)$$, we have
+Fix a matrix $$(a_{ij})$$ satisfying the hypothesis of Theorem 1. Let the vectors $$x_i,y_j$$ be given and consider the random variables $$X_i,Y_j$$ as in the hypothesis of the lemma. Then, using linearity of expectation and the trivial bound $$\lvert\mathbb E(Z)\rvert \leq\mathbb E(\lvert Z\rvert)$$, we have
 
 $$
 \begin{aligned}
