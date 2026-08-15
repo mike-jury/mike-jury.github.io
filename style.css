@@ -1,0 +1,45 @@
+body {
+  max-width: 680px;
+  margin: 2em auto;
+  padding: 0 1em;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+nav {
+  margin-bottom: 2em;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.1em;
+  margin-top: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+address {
+  font-style: normal;
+}
+
+footer {
+  margin-top: 3em;
+  font-size: 0.8em;
+  color: #666;
+  font-family: sans-serif;
+}
+
+.headshot {
+  float: right;
+  margin: 0 0 1em 1.5em;
+  width: 200px;
+  border-radius: 4px;
+}
