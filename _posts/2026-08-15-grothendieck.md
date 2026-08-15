@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Grothendieck's Inequality"
+title: "why is grothendieck's inequality true?"
 date: 2026-08-15
 permalink: /blog/grothendiecks-inequality/
 ---
@@ -9,7 +9,7 @@ The purpose of this post is to discuss Grothendieck's inequality, which we state
 
 ## Theorem 1 (Grothendieck's Theorem)
 
-There is a universal constant $$K$$ with the following property: let
+*There is a universal constant $$K$$ with the following property: let
 $$a_{ij}$$ be an $$n\times n$$ matrix and suppose that
 
 $$
@@ -30,15 +30,13 @@ $$
 \leq K,
 $$
 
-where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.
+where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.*
 
 The theorem is true over both the real and complex fields, though with different values of the universal constants $$K_G^{\mathbb R}$$ and $$K_G^{\mathbb C}$$, known as the *Grothendieck constants*.
 
-There are many proofs of Grothendieck's inequality available. In this post I'd like to discuss one of them, due essentially to Andrew Tonge, which, although it does not produce the best values of $$K_G$$, has the advantage of being conceptually very simple, so that even I can understand it. That is, it's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
+There are many proofs of Grothendieck's inequality available. In this post I'd like to discuss one of them, due essentially to Andrew Tonge, which, although it does not produce the best values of $$K_G$$, has the advantage of being conceptually very simple. It's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
 
 In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat Pisier's survey. You should also look at the book *The Metric Theory of Tensor Products* by Diestel, Fourie, and Swart. If anything, this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there.
-
-I hope to return to GT in future posts to describe the connection with tensor products, as well as its role in the failure of Ando's inequality in several variables (a connection observed by Varopoulos).
 
 The basic strategy of this proof, and of many other proofs of Theorem 1, is to realize inner products of vectors $$\langle x_i,y_j\rangle$$ in Hilbert space as covariances of random variables; that is, we will find some probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ so that
 
@@ -88,7 +86,7 @@ Of course, by itself this can't accomplish anything, since all we've done is emb
 
 ## Lemma 2 ($$L^\infty$$-flattening implies GT)
 
-Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+*Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
 
 $$
 \tag{2}
@@ -108,11 +106,11 @@ $$
 \quad\text{almost surely, for all }i,j=1,\dots,n.
 $$
 
-Then Grothendieck's inequality holds with constant $$K=C^2$$.
+Then Grothendieck's inequality holds with constant $$K=C^2$$.*
 
 ### Proof
 
-Fix a matrix $$(a_{ij})$$ satisfying the hypothesis of Theorem 1. Let the vectors $$x_i,y_j$$ be given and consider the random variables $$X_i,Y_j$$ as in the hypothesis of the lemma. Then, using linearity of expectation and the trivial bound $$\lvert\mathbb E(Z)\rvert \leq\mathbb E(\lvert Z\rvert)$$, we have
+Fix a matrix $$(a_{ij})$$ satisfying the hypothesis of Theorem 1. Let the vectors $$x_i,y_j$$ be given and consider the random variables $$X_i,Y_j$$ as in the hypothesis of the lemma. Then, using linearity of expectation and the trivial bound $$\lvert \mathbb{E}(Z)\rvert\leq\mathbb{E}(\vert Z\rvert )$$, we have
 
 $$
 \begin{aligned}
@@ -139,7 +137,7 @@ a_{ij}\mathbb E(X_iY_j)
 \tag{4}
 $$
 
-Now, since $$|X_i|,|Y_j|\leq C$$ almost surely, we have by the hypothesis on $$a$$,
+Now, since $$\lvert X_i\rvert ,\lvert Y_j\rvert \leq C$$ almost surely, we have by the hypothesis on $$a$$,
 
 $$
 \left|
@@ -149,9 +147,7 @@ $$
 \qquad\text{almost surely}.
 $$
 
-Thus its expectation is bounded by $$C^2$$ as well, so Grothendieck's inequality holds with $$K\leq C^2$$.
-
-$$\square$$
+Thus its expectation is bounded by $$C^2$$ as well, so Grothendieck's inequality holds with $$K\leq C^2$$. $$\square$$
 
 It turns out that there does indeed exist such a constant $$C$$, and in fact the existence of uniformly bounded random variables as in the lemma is equivalent to Grothendieck's inequality. I hope to work through this in a later post; in the meantime you can find it in Pisier's survey.
 
@@ -167,7 +163,7 @@ That is, if we can realize inner products as covariances of random variables in 
 
 ## Lemma 3 ($$L^p$$-flattening implies GT)
 
-Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+*Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
 
 $$
 \tag{6}
@@ -187,7 +183,7 @@ $$
 \quad\text{for all }i,j=1,\dots,n.
 $$
 
-Then Grothendieck's inequality holds with constant $$K$$ depending only on $$C$$ and $$p$$.
+Then Grothendieck's inequality holds with constant $$K$$ depending only on $$C$$ and $$p$$.*
 
 ### Proof
 
@@ -419,7 +415,7 @@ M^2\|a\|
 \|\!|a|\!\|.
 $$
 
-Thus, by taking $$M$$ sufficiently large, we can move the $$\|\!|a|\!\|$$ term to the left-hand side and conclude that
+Thus, by taking $$M$$ sufficiently large, we can move the $$\lvert\lvert\lvert a\rvert\rvert\rvert$$ term to the left-hand side and conclude that
 
 $$
 \|\!|a|\!\|
@@ -427,9 +423,7 @@ $$
 K(C,p)\|a\|.
 $$
 
-This proves the lemma.
-
-$$\square$$
+This proves the lemma.$\square$$
 
 I'll refer to the process of passing from the vectors $$x_i,y_j$$ to the random variables $$X_i,Y_j$$ as *flattening*. The idea is that we are placing the vectors into $$L^2(\mu)$$ in such a way that inner products are preserved, but so that the functions themselves lie in $$L^p$$ for some larger $$p$$, and are thus in a sense "flatter" than typical $$L^2$$ functions.
 
@@ -482,7 +476,7 @@ In particular, we have the following.
 
 ## Lemma 4 ($$L^4$$ flattening of Hilbert space)
 
-Let $$(r_n)_{n=1}^\infty$$ be a Rademacher system. Then for every $$\ell^2$$ sequence of real scalars $$(a_n)_{n=1}^\infty$$, we have
+*Let $$(r_n)_{n=1}^\infty$$ be a Rademacher system. Then for every $$\ell^2$$ sequence of real scalars $$(a_n)_{n=1}^\infty$$, we have
 
 $$
 \left\|
@@ -493,7 +487,7 @@ $$
 \left\|
 \sum_n a_nr_n
 \right\|_2.
-$$
+$$*
 
 ### Proof
 
@@ -565,17 +559,15 @@ $$
 \end{aligned}
 $$
 
-by our normalization. This proves the lemma.
-
-$$\square$$
+by our normalization. This proves the lemma.$$\square$$
 
 Of course, since the $$r_n$$ are real-valued, we can deduce an inequality in the complex case by taking real and imaginary parts, at the cost of an extra factor of $$\sqrt{2}$$ in the constant.
 
-At this point, anyone who actually understands these things (and has read this far) is shouting "Khinchin's inequality!" at their computer, so I should at least record that what we have called the "flattening lemma" is really a special case of the following.
+Those who know, know that what I have called the "flattening lemma" is really a special case of Khinchin's inequality: 
 
 ## Theorem 2 (Khinchin's inequality)
 
-Let $$r_n$$ be a Rademacher system and $$(a_n)$$ a sequence of scalars. Then for all $$1\leq p<\infty$$,
+*Let $$r_n$$ be a Rademacher system and $$(a_n)$$ a sequence of scalars. Then for all $$1\leq p<\infty$$,
 
 $$
 \left\|
@@ -587,9 +579,9 @@ $$
 \right)^{1/2},
 $$
 
-where the implied constants depend only on $$p$$.
+where the implied constants depend only on $$p$$.*
 
-I won't prove this here, but might return to it in a later post.
+I won't prove this here. 
 
 At any rate, using either Khinchin's inequality or our pedestrian version, we now get a proof of GT. Given the vectors $$x_i,y_j$$, expand them in an orthonormal basis of $$H$$ as
 
