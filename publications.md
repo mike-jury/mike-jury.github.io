@@ -49,14 +49,14 @@ published versions.
   with E. Gonzalez, M. Abudia, R. Kamalapurkar, and J. Rosenfeld  
   *Transactions on Machine Learning Research*, September 2024.
 
-- **Noncommutative inner-outer factorizations**  
+- Noncommutative inner-outer factorizations**  
   with R.T.W. Martin and E. Shamovich  
   In: Alpay, D., Sabadini, I., Colombo, F. (eds.), *Operator Theory*. Springer Basel (2024).
 
 
 ## 2023
 
-- **A brief introduction to noncommutative function theory**  
+- A brief introduction to noncommutative function theory 
   In: Mashreghi, J. (ed.), *Lectures on Analytic Function Spaces and their Applications*.  
   Fields Institute Monographs, vol. 39. Springer Cham (2023).
 
