@@ -4,7 +4,7 @@ title: "Conferences"
 permalink: /conferences.html
 ---
 
-# talks and conferences
+# conferences
 
 ---
 
