@@ -8,7 +8,7 @@ permalink: /blog/grothendiecks-inequality/
 The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form.
 >## Theorem 1 (Grothendieck's Theorem)
 >
->There is a universal constant $$K$$ with the following property: let
+>There is a universal constant $$K_G$$ with the following property: let
 >$$a_{ij}$$ be an $$n\times n$$ matrix and suppose that
 >
 >$$
@@ -26,7 +26,7 @@ The purpose of this post is to discuss Grothendieck's inequality, which we state
 >\left|
 >\sum_{i,j=1}^n a_{ij}\langle x_i,y_j\rangle_H
 >\right|
->\leq K,
+>\leq K_G,
 >$$
 >
 >where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.
@@ -84,14 +84,13 @@ $$
 Of course, by itself this can't accomplish anything, since all we've done is embed $$H$$ isomorphically into $$L^2(\mu)$$. However, there are gains to be had if we can arrange that the random variables $$X_i,Y_j$$ are better than $$L^2$$. In fact, by the following lemma, if we could arrange to realize inner products as covariances of *bounded* random variables, we would get an easy proof of Grothendieck's inequality.
 >## Lemma 2 ($$L^\infty$$-flattening implies GT)
 >
->Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+>Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that for all $$i,j=1, \dots, n$$,
 >
 >$$
 >\tag{2}
 >\langle x_i,y_j\rangle_H
 >=
 >\mathbb E(X_iY_j),
->\qquad i,j=1,\dots,n,
 >$$
 >
 >and
@@ -101,7 +100,7 @@ Of course, by itself this can't accomplish anything, since all we've done is emb
 >|X_i|\leq C,
 >\qquad
 >|Y_j|\leq C
->\quad\text{almost surely, for all }i,j=1,\dots,n.
+>\quad\text{almost surely.}
 >$$
 >
 >Then Grothendieck's inequality holds with constant $$K=C^2$$.
