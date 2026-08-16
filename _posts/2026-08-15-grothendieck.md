@@ -82,30 +82,29 @@ $$
 $$
 
 Of course, by itself this can't accomplish anything, since all we've done is embed $$H$$ isomorphically into $$L^2(\mu)$$. However, there are gains to be had if we can arrange that the random variables $$X_i,Y_j$$ are better than $$L^2$$. In fact, by the following lemma, if we could arrange to realize inner products as covariances of *bounded* random variables, we would get an easy proof of Grothendieck's inequality.
-
-## Lemma 2 ($$L^\infty$$-flattening implies GT)
-
-*Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
-
-$$
-\tag{2}
-\langle x_i,y_j\rangle_H
-=
-\mathbb E(X_iY_j),
-\qquad i,j=1,\dots,n,
-$$
-
-and
-
-$$
-\tag{3}
-|X_i|\leq C,
-\qquad
-|Y_j|\leq C
-\quad\text{almost surely, for all }i,j=1,\dots,n.
-$$
-
-Then Grothendieck's inequality holds with constant $$K=C^2$$.*
+>## Lemma 2 ($$L^\infty$$-flattening implies GT)
+>
+>Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+>
+>$$
+>\tag{2}
+>\langle x_i,y_j\rangle_H
+>=
+>\mathbb E(X_iY_j),
+>\qquad i,j=1,\dots,n,
+>$$
+>
+>and
+>
+>$$
+>\tag{3}
+>|X_i|\leq C,
+>\qquad
+>|Y_j|\leq C
+>\quad\text{almost surely, for all }i,j=1,\dots,n.
+>$$
+>
+>Then Grothendieck's inequality holds with constant $$K=C^2$$.
 
 ### Proof
 
@@ -159,30 +158,29 @@ On the other hand, one can give up (2) holding exactly and instead have it hold 
 As we just said, our strategy here will be to give up boundedness (3), since this seems very hard to get by any direct argument. And as we also noted above, it is trivial to get $$L^2$$-ness. As it turns out, however, if we can get anything better than $$L^2$$, we win.
 
 That is, if we can realize inner products as covariances of random variables in $$L^p$$ (or, sorry, with "finite $$p$$th moments") for some $$p>2$$, and of course with uniform constants, we can prove GT.
-
-## Lemma 3 ($$L^p$$-flattening implies GT)
-
-*Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
-
-$$
-\tag{6}
-\langle x_i,y_j\rangle_H
-=
-\mathbb E(X_iY_j),
-\qquad i,j=1,\dots,n,
-$$
-
-and
-
-$$
-\tag{7}
-\mathbb E(|X_i|^p)\leq C,
-\qquad
-\mathbb E(|Y_j|^p)\leq C
-\quad\text{for all }i,j=1,\dots,n.
-$$
-
-Then Grothendieck's inequality holds with constant $$K$$ depending only on $$C$$ and $$p$$.*
+>## Lemma 3 ($$L^p$$-flattening implies GT)
+>
+>Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+>
+>$$
+>\tag{6}
+>\langle x_i,y_j\rangle_H
+>=
+>\mathbb E(X_iY_j),
+>\qquad i,j=1,\dots,n,
+>$$
+>
+>and
+>
+>$$
+>\tag{7}
+>\mathbb E(|X_i|^p)\leq C,
+>\qquad
+>\mathbb E(|Y_j|^p)\leq C
+>\quad\text{for all }i,j=1,\dots,n.
+>$$
+>
+>Then Grothendieck's inequality holds with constant $$K$$ depending only on $$C$$ and $$p$$.
 
 ### Proof
 
@@ -472,21 +470,20 @@ $$
 $$
 
 In particular, we have the following.
-
-## Lemma 4 ($$L^4$$ flattening of Hilbert space)
-
-*Let $$(r_n)_{n=1}^\infty$$ be a Rademacher system. Then for every $$\ell^2$$ sequence of real scalars $$(a_n)_{n=1}^\infty$$, we have
-
-$$
-\left\|
-\sum_n a_nr_n
-\right\|_4
-\leq
-3^{1/4}
-\left\|
-\sum_n a_nr_n
-\right\|_2.
-$$*
+>## Lemma 4 ($$L^4$$ flattening of Hilbert space)
+>
+>Let $$(r_n)_{n=1}^\infty$$ be a Rademacher system. Then for every $$\ell^2$$ sequence of real scalars $$(a_n)_{n=1}^\infty$$, we have
+>
+>$$
+>\left\|
+>\sum_n a_nr_n
+>\right\|_4
+>\leq
+>3^{1/4}
+>\left\|
+>\sum_n a_nr_n
+>\right\|_2.
+>$$
 
 ### Proof
 
@@ -563,22 +560,21 @@ by our normalization. This proves the lemma.$$\square$$
 Of course, since the $$r_n$$ are real-valued, we can deduce an inequality in the complex case by taking real and imaginary parts, at the cost of an extra factor of $$\sqrt{2}$$ in the constant.
 
 Those who know, know that what I have called the "flattening lemma" is really a special case of Khinchin's inequality: 
-
-## Theorem 2 (Khinchin's inequality)
-
-*Let $$r_n$$ be a Rademacher system and $$(a_n)$$ a sequence of scalars. Then for all $$1\leq p<\infty$$,
-
-$$
-\left\|
-\sum_n a_nr_n
-\right\|_p
-\approx
-\left(
-\sum_n|a_n|^2
-\right)^{1/2},
-$$
-
-where the implied constants depend only on $$p$$.*
+>## Theorem 2 (Khinchin's inequality)
+>
+>Let $$r_n$$ be a Rademacher system and $$(a_n)$$ a sequence of scalars. Then for all $$1\leq p<\infty$$,
+>
+>$$
+>\left\|
+>\sum_n a_nr_n
+>\right\|_p
+>\approx
+>\left(
+>\sum_n|a_n|^2
+>\right)^{1/2},
+>$$
+>
+>where the implied constants depend only on $$p$$.
 
 I won't prove this here. 
 
