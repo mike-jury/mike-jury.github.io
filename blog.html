@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: blog
 ---
 
 <!DOCTYPE html>
@@ -12,14 +12,21 @@ title: Blog
   <title>Blog - Mike Jury</title>
 
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <!-- MathJax -->
+    <script
+        id="MathJax-script"
+        defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
 </head>
 
 <body class="blog-page">
 
   {% include menu.html %}
 
-  <h1>Blog</h1>
-<p>Number of posts: {{ site.posts.size }}</p>
+  <h1>blog</h1>
+
   <div class="blog-layout">
 
     <aside class="blog-sidebar">
