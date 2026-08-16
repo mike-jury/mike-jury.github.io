@@ -30,7 +30,7 @@ The purpose of this post is to discuss Grothendieck's inequality, which we state
 >\leq K,
 >$$
 >
->where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.*
+>where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.
 
 The theorem is true over both the real and complex fields, though with different values of the universal constants $$K_G^{\mathbb R}$$ and $$K_G^{\mathbb C}$$, known as the *Grothendieck constants*.
 
