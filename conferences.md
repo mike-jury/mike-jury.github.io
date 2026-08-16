@@ -133,5 +133,3 @@ permalink: /conferences.html
 Coming soon.
 
 ---
-
-<footer>Page last updated 2026-08-15.</footer>

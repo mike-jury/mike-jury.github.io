@@ -208,6 +208,4 @@ published versions.
   *Journal of Operator Theory* 53, No. 2 (2005), 273–302.
 
 
----
 
-<footer>Page last updated 2026-07-29.</footer>
