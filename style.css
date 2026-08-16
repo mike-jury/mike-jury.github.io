@@ -186,3 +186,17 @@ blockquote {
   padding: 10px 15px;
 }
 
+.home-photo {
+    float: right;
+    width: 160px;
+    margin: 0 0 1em 2em;
+}
+
+@media (max-width: 600px) {
+    .home-photo {
+        float: none;
+        display: block;
+        width: 140px;
+        margin: 0 auto 1em auto;
+    }
+}
