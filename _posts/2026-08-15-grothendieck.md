@@ -9,28 +9,28 @@ The purpose of this post is to discuss Grothendieck's inequality, which we state
 
 ## Theorem 1 (Grothendieck's Theorem)
 
-*There is a universal constant $$K$$ with the following property: let
-$$a_{ij}$$ be an $$n\times n$$ matrix and suppose that
-
-$$
-\sup_{|s_i|\leq 1,\ |t_j|\leq 1}
-\left|
-\sum_{i,j=1}^n a_{ij}s_i t_j
-\right|
-\leq 1.
-$$
-
-Then
-
-$$
-\sup_{\|x_i\|\leq 1,\ \|y_j\|\leq 1}
-\left|
-\sum_{i,j=1}^n a_{ij}\langle x_i,y_j\rangle_H
-\right|
-\leq K,
-$$
-
-where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.*
+>There is a universal constant $$K$$ with the following property: let
+>$$a_{ij}$$ be an $$n\times n$$ matrix and suppose that
+>
+>$$
+>\sup_{|s_i|\leq 1,\ |t_j|\leq 1}
+>\left|
+>\sum_{i,j=1}^n a_{ij}s_i t_j
+>\right|
+>\leq 1.
+>$$
+>
+>Then
+>
+>$$
+>\sup_{\|x_i\|\leq 1,\ \|y_j\|\leq 1}
+>\left|
+>\sum_{i,j=1}^n a_{ij}\langle x_i,y_j\rangle_H
+>\right|
+>\leq K,
+>$$
+>
+>where the $$x_i$$ and $$y_j$$ are vectors in a Hilbert space $$H$$.*
 
 The theorem is true over both the real and complex fields, though with different values of the universal constants $$K_G^{\mathbb R}$$ and $$K_G^{\mathbb C}$$, known as the *Grothendieck constants*.
 
