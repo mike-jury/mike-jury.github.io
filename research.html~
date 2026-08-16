@@ -1,0 +1,19 @@
+---
+title: research
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>publications – mike jury</title>
+
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  
+</head>
+<body>
+{% include menu.html %}
+
+<h2><a href="publications.html">publications</a><<h2>
+<h2><a href="conferences.html">talks and conferences</a><<h2>						  
