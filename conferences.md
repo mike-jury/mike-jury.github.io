@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Conferences"
+title: "conferences"
 permalink: /conferences.html
 ---
 
