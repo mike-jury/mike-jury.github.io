@@ -7,8 +7,8 @@ permalink: /blog/grothendiecks-inequality/
 
 The purpose of this post is to discuss Grothendieck's inequality, which we state in the following form.
 
-## Theorem 1 (Grothendieck's Theorem)
-
+>## Theorem 1 (Grothendieck's Theorem)
+>
 >There is a universal constant $$K$$ with the following property: let
 >$$a_{ij}$$ be an $$n\times n$$ matrix and suppose that
 >
