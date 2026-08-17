@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "why is grothendieck's inequality true?"
-date: 2026-08-15
+date: 2026-08-17
 permalink: /blog/grothendiecks-inequality/
 ---
 
@@ -35,7 +35,7 @@ The theorem is true over both the real and complex fields, though with different
 
 There are many proofs of Grothendieck's inequality available. In this post I'd like to discuss one of them, due essentially to Andrew Tonge, which, although it does not produce the best values of $$K_G$$, has the advantage of being conceptually very simple. It's one of those proofs that, once you've read it, you feel like you actually understand why the theorem is true.
 
-In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat Pisier's survey. You should also look at the book *The Metric Theory of Tensor Products* by Diestel, Fourie, and Swart. If anything, this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there.
+In particular, this post is in no way meant to be a survey of all there is to say about Grothendieck's theorem; for that you can't beat [Pisier's survey.](https://arxiv.org/abs/1101.4195) You should also look at the book [*The Metric Theory of Tensor Products*](https://books.google.com/books/about/The_Metric_Theory_of_Tensor_Products.html?id=VBg5cGSngRoC)  by Diestel, Fourie, and Swart. If anything, this post should be read as an advertisement for that book, since I understood nothing about tensor products until I started reading it. The proof of GT presented here is an adaptation of Tonge's proof as presented there.
 
 The basic strategy of this proof, and of many other proofs of Theorem 1, is to realize inner products of vectors $$\langle x_i,y_j\rangle$$ in Hilbert space as covariances of random variables; that is, we will find some probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ so that
 
@@ -159,14 +159,13 @@ As we just said, our strategy here will be to give up boundedness (3), since thi
 That is, if we can realize inner products as covariances of random variables in $$L^p$$ (or, sorry, with "finite $$p$$th moments") for some $$p>2$$, and of course with uniform constants, we can prove GT.
 >## Lemma 3 ($$L^p$$-flattening implies GT)
 >
->Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that
+>Fix $$2<p<\infty$$. Suppose there exists a constant $$C>0$$ with the following property: whenever $$x_1,\dots,x_n,y_1,\dots,y_n$$ are vectors in the unit ball of a Hilbert space $$H$$, there exist a probability space $$(\Omega,\mathcal E,\mu)$$ and random variables $$X_1,\dots,X_n,Y_1,\dots,Y_n$$ on $$\Omega$$ such that for all $$i,j=1, \dots, n$$,
 >
 >$$
 >\tag{6}
 >\langle x_i,y_j\rangle_H
 >=
 >\mathbb E(X_iY_j),
->\qquad i,j=1,\dots,n,
 >$$
 >
 >and
@@ -176,7 +175,6 @@ That is, if we can realize inner products as covariances of random variables in 
 >\mathbb E(|X_i|^p)\leq C,
 >\qquad
 >\mathbb E(|Y_j|^p)\leq C
->\quad\text{for all }i,j=1,\dots,n.
 >$$
 >
 >Then Grothendieck's inequality holds with constant $$K$$ depending only on $$C$$ and $$p$$.
@@ -351,7 +349,7 @@ $$
 \right\rangle_{L^2(\mu)}.
 $$
 
-Therefore, by the definition of the $$\|\!|\,\cdot\,|\!\|$$ norm,
+Therefore, by the definition of the $$\lvert\lvert\lvert\cdot\lvert\lvert\lvert$ norm,
 
 $$
 \begin{aligned}
@@ -419,7 +417,7 @@ $$
 K(C,p)\|a\|.
 $$
 
-This proves the lemma.$\square$$
+This proves the lemma. $$\square$$
 
 I'll refer to the process of passing from the vectors $$x_i,y_j$$ to the random variables $$X_i,Y_j$$ as *flattening*. The idea is that we are placing the vectors into $$L^2(\mu)$$ in such a way that inner products are preserved, but so that the functions themselves lie in $$L^p$$ for some larger $$p$$, and are thus in a sense "flatter" than typical $$L^2$$ functions.
 
