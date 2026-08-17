@@ -339,7 +339,7 @@ $$
 
 almost surely.
 
-Now we have to control the contributions from the remaining tail terms $$X^M,Y^M$$. To do this, first note that
+Now we have to control the contributions from the remaining tail terms $$X^M,Y^M.$$ To do this, first note that
 
 $$
 \mathbb E\big((X_i)^M(Y_j)_M\big)
@@ -349,7 +349,7 @@ $$
 \right\rangle_{L^2(\mu)}.
 $$
 
-Therefore, by the definition of the $$\lvert\lvert\lvert\cdot\lvert\lvert\lvert$ norm,
+Therefore, by the definition of the $$\lvert\lvert\lvert\cdot\lvert\lvert\lvert$$ norm,
 
 $$
 \begin{aligned}
