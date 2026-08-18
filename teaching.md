@@ -3,8 +3,6 @@ layout: page
 title: teaching
 ---
 
-{% include menu.html %}
-
 # teaching
 
 ---

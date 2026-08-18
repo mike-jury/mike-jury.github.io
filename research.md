@@ -3,8 +3,6 @@ layout: page
 title: research
 ---
 
-{% include menu.html %}
-
 # research
 
 ---

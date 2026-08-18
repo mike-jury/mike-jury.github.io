@@ -3,8 +3,6 @@ layout: page
 title: service
 ---
 
-{% include menu.html %}
-
 # service
 
 ---
