@@ -1,0 +1,26 @@
+---
+
+layout: page
+title: mike jury
+----------------
+
+# mike jury
+
+Professor of Mathematics, University of Florida
+Associate Chair and Graduate Coordinator
+
+---
+
+### about me
+
+<img src="{{ '/photo.png' | relative_url }}" alt="Mike Jury" style="float: right; width: 160px; height: auto; margin: 0 0 1em 2em;">
+
+*Giving the public details about oneself is a bourgeois temptation I have always resisted.*
+—Gustave Flaubert
+
+### contact
+
+*Email is a medium through which professional stress can reach workers who no longer feel protected by the traditional barriers of place and time.*
+—Fernando Lagraña
+
+email: [mjury@ufl.edu](mailto:mjury@ufl.edu)
