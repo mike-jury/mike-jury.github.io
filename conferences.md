@@ -10,7 +10,7 @@ permalink: /conferences.html
 
 ## upcoming
 
-- **31 January-5 February 2027**
+- **31 January-5 February 2027**  
   [Workshop on Non-commutative Function Theory: A Link between Operator Theory and Random Matrices](https://www.mfo.de/www/activity/2705)
   *Mathematisches Forschungsinstitut Oberwolfach (MFO), Germany.*
   
