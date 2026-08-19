@@ -10,13 +10,17 @@ permalink: /conferences.html
 
 ## upcoming
 
-- **3–7 August 2026**  
-  [International Workshop on Operator Theory and Applications](https://iwota-2026.fsg.ulaval.ca/)  
-  *Université Laval, Quebec City.*
-
+- **31 January-5 February 2027**
+  [Workshop on Non-commutative Function Theory: A Link between Operator Theory and Random Matrices](https://www.mfo.de/www/activity/2705)
+  *Mathematisches Forschungsinstitut Oberwolfach (MFO), Germany.*
+  
 ---
 
 ## 2026 (past)
+
+- **3–7 August 2026**  
+  [International Workshop on Operator Theory and Applications](https://iwota-2026.fsg.ulaval.ca/)  
+  *Université Laval, Quebec City.*
 
 - **15–19 June 2026**  
   [Advanced Courses in Operator Theory and Complex Analysis (ACOTCA)](https://sites.google.com/view/acotca-2026/home)  
