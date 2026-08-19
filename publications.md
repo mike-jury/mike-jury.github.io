@@ -18,6 +18,9 @@ published versions.
 
 ## preprints
 
+- [Limiting eigenvalue distribution and entropy of multi-Toeplitz matrices](https://arxiv.org/abs/2608.17859)  
+  with A. Memana
+
 - [Free versions of the strong Szegő limit theorem](https://arxiv.org/abs/2607.25980)  
   with L. van Rensburg and G. Roman
 
